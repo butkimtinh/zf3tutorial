@@ -12,5 +12,10 @@
  */
 
 return [
-    // ...
+    'db' => [
+        'driver' => 'Pdo_Mysql',
+        'database' => 'zf3tutorial',
+        'hostname' => 'localhost',
+        'charset' => 'utf8',
+    ],
 ];
