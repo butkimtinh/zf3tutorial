@@ -15,10 +15,21 @@ namespace Album;
 
 use Zend\ServiceManager\Factory\InvokableFactory;
 use Zend\Router\Http\Segment;
+use Zend\Router\Http\Literal;
 
 return [
     'router' => [
         'routes' => [
+            'home' => [
+            'type' => Literal::class,
+            'options' => [
+                'route'    => '/',
+                'defaults' => [
+                    'controller' => Controller\AlbumController::class, // <-- change here
+                    'action'     => 'index',
+                ],
+            ],
+        ],
             'album' => [
                 'type' => Segment::class,
                 'options' => [
