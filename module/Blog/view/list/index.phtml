@@ -11,3 +11,13 @@
  * Create at: Sep 20, 2017 11:16:50 AM
  */
 
+?>
+<h1>Blog</h1>
+
+<?php foreach ($this->posts as $post): ?>
+<article>
+  <h1 id="post<?= $post->getId() ?>"><?= $post->getTitle() ?></h1>
+
+  <p><?= $post->getText() ?></p>
+</article>
+<?php endforeach ?>

@@ -39,9 +39,19 @@ return [
             ],
         ],
     ],
+    // Add this section:
+    'service_manager' => [
+        'aliases' => [
+            Model\PostRepositoryInterface::class => Model\PostRepository::class,
+        ],
+        'factories' => [
+            Model\PostRepository::class => InvokableFactory::class,
+        ],
+    ],
     'controllers' => [
         'factories' => [
-            Controller\ListController::class => InvokableFactory::class,
+            // Update the following line:
+            Controller\ListController::class => Factory\ListControllerFactory::class,
         ],
     ],
     'view_manager' => [
